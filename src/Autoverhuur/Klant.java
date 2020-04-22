@@ -14,6 +14,6 @@ public class Klant {
     }
 
     public double getKortingsPersentage(){
-        return kortingsPersentage;
+        return this.kortingsPersentage;
     }
 }
