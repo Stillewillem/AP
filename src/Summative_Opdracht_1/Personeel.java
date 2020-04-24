@@ -34,10 +34,6 @@ public class Personeel implements Mens{
         this.achternaam = achternaam;
     }
 
-    public int getPersoneelNummer() {
-        return personeelNummer;
-    }
-
     public void setPersoneelNummer(int personeelNummer) {
         int length = String.valueOf(personeelNummer).length();
         if (length == 8) {

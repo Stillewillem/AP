@@ -14,10 +14,6 @@ public class LeningAanvraag{
         setLooptijdMaanden(looptijdMaanden);
     }
 
-    public String getSoortLening() {
-        return soortLening;
-    }
-
     public void setSoortLening(String soortLening) {
         this.soortLening = soortLening;
     }

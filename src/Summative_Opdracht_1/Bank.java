@@ -48,10 +48,6 @@ public class Bank {
         this.werknermer = p;
     }
 
-    public Personeel getWerknermer() {
-        return werknermer;
-    }
-
     public void setGeld(Kluis geld) {
         this.geld = geld;
     }
@@ -62,14 +58,6 @@ public class Bank {
 
     public void setKlant(Klant k) {
         this.klant = k;
-    }
-
-    public Klant getKlant() {
-        return klant;
-    }
-
-    public String getLocatie() {
-        return locatie;
     }
 
     public void setLocatie(String locatie) {

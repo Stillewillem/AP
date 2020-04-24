@@ -5,7 +5,6 @@ public class Klant implements Mens{
 
     private String voornaam;
     private String achternaam;
-    private String geboortedatum;
     private double maandelijkeInkomsten;
     private LeningAanvraag lening;
 
@@ -25,9 +24,6 @@ public class Klant implements Mens{
         this.lening = lening;
     }
 
-    public LeningAanvraag getLening() {
-        return lening;
-    }
 
     public String getVoornaam() {
         return voornaam;
@@ -45,12 +41,7 @@ public class Klant implements Mens{
         this.achternaam = achternaam;
     }
 
-    public String getGeboortedatum() {
-        return geboortedatum;
-    }
-
     public void setGeboortedatum(String geboortedatum) {
-        this.geboortedatum = geboortedatum;
     }
 
     public double getMaandelijkeInkomsten() {
