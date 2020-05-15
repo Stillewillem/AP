@@ -31,11 +31,11 @@ public class Node {
         Random rand = new Random();
         double random = rand.nextDouble();
 
-        if (nextNode1 != null){
+        if (nextNode2 != null){
             getNextNode(random);
         }
 
-        if (side1 != null){
+        if (side2 != null){
             getSide(random);
         }
 
@@ -50,6 +50,7 @@ public class Node {
         }
         if (random >= probability){
             System.out.println(side1);
+            System.exit(0);
         }
     }
 
