@@ -1,6 +1,7 @@
 package Summative_opdracht_2;
 
 import java.util.List;
+import java.util.Random;
 
 public class Node {
 
@@ -21,25 +22,62 @@ public class Node {
         this.endNode = endNode;
     }
 
-    public void NextNodeCh(String input, int index){
+    public Node getNextNodeCh(String input, int index){
         System.out.println(node);
 
         if (index == input.length()) {
-            System.exit(0);
+            System.out.println("The end");
+            return null;
         }
         if (endNode != null){
             int pos = characters.indexOf(input.charAt(index));
             if (nextNodes.size() > pos){
-                nextNodes.get(pos).NextNodeCh(input, index + 1);
+                return nextNodes.get(pos);
             }
             else {
-                System.out.println(endNode.get(pos));
-                System.exit(0);
+                System.out.println(endNode.get(pos - 1));
+                return null;
             }
         }
         if (characters.contains(input.charAt(index))){
             int pos = characters.indexOf(input.charAt(index));
-            nextNodes.get(pos).NextNodeCh(input, index + 1);
+            return nextNodes.get(pos);
         }
+        return null;
+    }
+
+    public Node nextState(){
+        System.out.println(node);
+
+        Random rand = new Random();
+        double random = rand.nextDouble();
+
+        if (endNode != null) {
+            double prob = 0;
+            for (double i : probability) {
+                prob += i;
+                if (random <= prob) {
+                    int pos = probability.indexOf(i);
+                    if (nextNodes.size() > pos) {
+                        return nextNodes.get(pos);
+                    } else {
+                        System.out.println(endNode.get(pos - 1));
+                        return null;
+                    }
+                }
+            }
+        }
+
+        if (endNode == null){
+            double prob = 0;
+            for (double i : probability){
+                prob += i;
+                if (random <= prob){
+                    int pos = probability.indexOf(i);
+                    return nextNodes.get(pos);
+                }
+            }
+        }
+        return null;
     }
 }
